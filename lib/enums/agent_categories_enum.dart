@@ -1,4 +1,4 @@
-enum Classes {
+enum AgentCategories {
   DUELISTS,
   SENTINELS,
   INITIATORS,

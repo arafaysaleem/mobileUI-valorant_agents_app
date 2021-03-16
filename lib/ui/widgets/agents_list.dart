@@ -4,12 +4,12 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../providers/all_providers.dart';
 
-import '../../enums/classes_enum.dart';
+import '../../enums/agent_categories_enum.dart';
 
 class AgentsList extends HookWidget {
-  final Classes category;
+  final AgentCategories category;
 
-  const AgentsList({this.category = Classes.ALL});
+  const AgentsList({this.category = AgentCategories.ALL});
 
   @override
   Widget build(BuildContext context) {

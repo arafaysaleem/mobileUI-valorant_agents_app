@@ -4,15 +4,15 @@ import 'package:flutter/material.dart';
 
 import '../enums/ability_names_enum.dart';
 import '../enums/agent_names_enum.dart';
-import '../enums/classes_enum.dart';
+import '../enums/agent_categories_enum.dart';
 import '../enums/countries_enum.dart';
 import '../models/agent.dart';
 
 class AgentsProvider {
   const AgentsProvider();
 
-  final Map<Classes, List<Agent>> _agents = const {
-    Classes.SENTINELS: [
+  final Map<AgentCategories, List<Agent>> _agents = const {
+    AgentCategories.SENTINELS: [
       Agent(
         AgentNames.CYPHER,
         abilities: [
@@ -22,7 +22,7 @@ class AgentsProvider {
           AbilityName.NEURAL_THEFT,
         ],
         origin: Countries.RUSSIA,
-        category: Classes.SENTINELS,
+        category: AgentCategories.SENTINELS,
         color: Colors.amber,
       ),
       Agent(
@@ -34,7 +34,7 @@ class AgentsProvider {
           AbilityName.RESURRECTION,
         ],
         origin: Countries.CHINA,
-        category: Classes.SENTINELS,
+        category: AgentCategories.SENTINELS,
         color: Colors.amber,
       ),
       Agent(
@@ -46,11 +46,11 @@ class AgentsProvider {
           AbilityName.LOCKDOWN,
         ],
         origin: Countries.GERMANY,
-        category: Classes.SENTINELS,
+        category: AgentCategories.SENTINELS,
         color: Colors.amber,
       ),
     ],
-    Classes.CONTROLLERS: [
+    AgentCategories.CONTROLLERS: [
       Agent(
         AgentNames.ASTRA,
         abilities: [
@@ -60,7 +60,7 @@ class AgentsProvider {
           AbilityName.ASTRALFORM,
         ],
         origin: Countries.GHANA,
-        category: Classes.CONTROLLERS,
+        category: AgentCategories.CONTROLLERS,
         color: Colors.red,
       ),
       Agent(
@@ -72,7 +72,7 @@ class AgentsProvider {
           AbilityName.ORBITAL_STRIKE,
         ],
         origin: Countries.USA,
-        category: Classes.CONTROLLERS,
+        category: AgentCategories.CONTROLLERS,
         color: Colors.red,
       ),
       Agent(
@@ -84,7 +84,7 @@ class AgentsProvider {
           AbilityName.FROM_THE_SHADOWS,
         ],
         origin: Countries.USA,
-        category: Classes.CONTROLLERS,
+        category: AgentCategories.CONTROLLERS,
         color: Colors.red,
       ),
       Agent(
@@ -96,11 +96,11 @@ class AgentsProvider {
           AbilityName.VIPERS_PIT,
         ],
         origin: Countries.USA,
-        category: Classes.CONTROLLERS,
+        category: AgentCategories.CONTROLLERS,
         color: Colors.red,
       ),
     ],
-    Classes.INITIATORS: [
+    AgentCategories.INITIATORS: [
       Agent(
         AgentNames.BREACH,
         abilities: [
@@ -110,7 +110,7 @@ class AgentsProvider {
           AbilityName.ROLLING_THUNDER,
         ],
         origin: Countries.SWEDEN,
-        category: Classes.INITIATORS,
+        category: AgentCategories.INITIATORS,
         color: Colors.blue,
       ),
       Agent(
@@ -122,7 +122,7 @@ class AgentsProvider {
           AbilityName.HUNTERS_FURY,
         ],
         origin: Countries.RUSSIA,
-        category: Classes.INITIATORS,
+        category: AgentCategories.INITIATORS,
         color: Colors.blue,
       ),
       Agent(
@@ -134,11 +134,11 @@ class AgentsProvider {
           AbilityName.SEEKERS,
         ],
         origin: Countries.AUSTRALIA,
-        category: Classes.INITIATORS,
+        category: AgentCategories.INITIATORS,
         color: Colors.blue,
       ),
     ],
-    Classes.DUELISTS: [
+    AgentCategories.DUELISTS: [
       Agent(
         AgentNames.JETT,
         abilities: [
@@ -148,7 +148,7 @@ class AgentsProvider {
           AbilityName.BLADE_STORM,
         ],
         origin: Countries.SOUTH_KOREA,
-        category: Classes.DUELISTS,
+        category: AgentCategories.DUELISTS,
         color: Color(0xFF00C853),
       ),
       Agent(
@@ -160,7 +160,7 @@ class AgentsProvider {
           AbilityName.SHOWSTOPPER,
         ],
         origin: Countries.BRAZIL,
-        category: Classes.DUELISTS,
+        category: AgentCategories.DUELISTS,
         color: Color(0xFF00C853),
       ),
       Agent(
@@ -172,7 +172,7 @@ class AgentsProvider {
           AbilityName.RUN_IT_BACK,
         ],
         origin: Countries.UK,
-        category: Classes.DUELISTS,
+        category: AgentCategories.DUELISTS,
         color: Color(0xFF00C853),
       ),
       Agent(
@@ -184,7 +184,7 @@ class AgentsProvider {
           AbilityName.EMPRESS,
         ],
         origin: Countries.MEXICO,
-        category: Classes.DUELISTS,
+        category: AgentCategories.DUELISTS,
         color: Color(0xFF00C853),
       ),
       Agent(
@@ -196,14 +196,14 @@ class AgentsProvider {
           AbilityName.DIMENSION_DRIFT,
         ],
         origin: Countries.JAPAN,
-        category: Classes.DUELISTS,
+        category: AgentCategories.DUELISTS,
         color: Color(0xFF00C853),
       ),
     ]
   };
 
-  UnmodifiableListView<Agent> getAgents({required Classes category}) {
-    if (category == Classes.ALL) {
+  UnmodifiableListView<Agent> getAgents({required AgentCategories category}) {
+    if (category == AgentCategories.ALL) {
       List<Agent> all = _agents.values.expand((agents) => agents).toList();
       return UnmodifiableListView(all);
     }
