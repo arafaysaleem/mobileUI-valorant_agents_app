@@ -7,6 +7,13 @@ class TitleScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage("assets/backgrounds/cover1.png"),
+          fit: BoxFit.fill
+        )
+      ),
+    );
   }
 }
