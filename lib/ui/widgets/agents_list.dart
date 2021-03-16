@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../enums/agent_categories_enum.dart';
 import '../../providers/all_providers.dart';
+
+import '../../enums/agent_categories_enum.dart';
+
+import '../../helper/assets.dart';
 
 class AgentsList extends HookWidget {
   final AgentCategories category;
@@ -17,9 +20,10 @@ class AgentsList extends HookWidget {
       itemCount: agents.length,
       padding: const EdgeInsets.all(0),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          mainAxisSpacing: 35,
-          childAspectRatio: 0.7),
+        crossAxisCount: 2,
+        mainAxisSpacing: 35,
+        childAspectRatio: 0.7,
+      ),
       itemBuilder: (ctx, i) => SizedBox(
         height: 210,
         child: Stack(
@@ -70,7 +74,7 @@ class AgentsList extends HookWidget {
               right: -25,
               bottom: 0,
               child: Image.asset(
-                "assets/agents/${agents[i].avatar}",
+                Assets.avatarAsset(agents[i].avatar),
                 height: 210,
               ),
             )

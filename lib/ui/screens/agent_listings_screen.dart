@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../helper/assets.dart';
+
 import '../widgets/agents_list.dart';
 
 class AgentListingsScreen extends StatelessWidget {
@@ -11,9 +13,9 @@ class AgentListingsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: const BoxDecoration(
-          image: const DecorationImage(
-            image: const AssetImage("assets/backgrounds/cover2.png"),
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(Assets.listingBg),
             fit: BoxFit.fill
           ),
         ),
