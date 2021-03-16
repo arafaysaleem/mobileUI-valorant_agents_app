@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+
 enum AbilityName {
   AFTERSHOCK, ALARMBOT, ASTRALFORM,
   BARRIER_ORB, BLADE_STORM, BLAST_PACK, BLAZE, BLINDSIDE, BOOM_BOT,
@@ -18,4 +20,8 @@ enum AbilityName {
   TAILWIND, TOXIC_SCREEN, TRAILBLAZER, TRAPWIRE, TURRET,
   UPDRAFT,
   VIPERS_PIT
+}
+
+extension AbilityEx on AbilityName{
+  String get inString => describeEnum(this);
 }

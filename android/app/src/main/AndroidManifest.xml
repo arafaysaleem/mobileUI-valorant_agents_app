@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.inceptrafay.valorant_agents_app">
    <application
-        android:label="valorant_agents_app"
+        android:label="Valo Agents"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

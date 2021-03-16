@@ -21,11 +21,11 @@ class MyApp extends StatelessWidget {
     return ProviderScope(
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
+        title: 'Valorant Agents',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primaryColor: const Color(0xFFFF4654),
         ),
-        initialRoute: TitleScreen.routeName,
+        initialRoute: AgentListingsScreen.routeName,
         routes: {
           TitleScreen.routeName: (_) => TitleScreen(),
           AgentListingsScreen.routeName: (_) => AgentListingsScreen(),

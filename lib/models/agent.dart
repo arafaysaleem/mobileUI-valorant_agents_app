@@ -22,11 +22,11 @@ class Agent {
     required category,
   }) : this._origin = origin, this._category = category;
 
-  String get name => _name.toString();
+  String get name => _name.inString;
 
-  String get origin => _origin.toString();
+  String get origin => _origin.inString;
 
-  String get category => _category.toString();
+  String get category => _category.inString;
 
-  String get avatar => _name.toString().toLowerCase().toImage();
+  String get avatar => name.toLowerCase().toImage();
 }
