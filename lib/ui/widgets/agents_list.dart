@@ -19,12 +19,13 @@ class AgentsList extends HookWidget {
   Widget build(BuildContext context) {
     final agents = useProvider(agentsProvider).getAgents(category: category);
     return GridView.builder(
+      physics: BouncingScrollPhysics(),
       itemCount: agents.length,
       padding: const EdgeInsets.all(0),
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
-        mainAxisSpacing: 30,
-        childAspectRatio: 0.85,
+        mainAxisSpacing: 12,
+        childAspectRatio: 0.80,
       ),
       itemBuilder: (ctx, i) {
         final agent = agents[i];
@@ -60,7 +61,7 @@ class AgentListItem extends StatelessWidget {
             ),
             margin: isLeftSide
                 ? const EdgeInsets.only(left: 10, right: 15)
-                : const EdgeInsets.symmetric(horizontal: 5),
+                : const EdgeInsets.only(left: 5,right: 10),
             padding: const EdgeInsets.symmetric(
               vertical: 25,
               horizontal: 6,
@@ -92,11 +93,11 @@ class AgentListItem extends StatelessWidget {
 
         //Avatar
         Positioned(
-          right: -10,
+          right: 1,
           bottom: 5,
           child: Image.asset(
             Assets.avatarAsset(agent.avatar),
-            height: 200,
+            height: 207,
           ),
         )
       ],
