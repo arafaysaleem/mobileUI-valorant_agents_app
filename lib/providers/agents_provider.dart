@@ -23,7 +23,7 @@ class AgentsProvider {
         ],
         origin: Countries.RUSSIA,
         category: AgentCategories.SENTINELS,
-        color: Colors.amber,
+        color: Color(0xFFb1b1b1),
       ),
       Agent(
         AgentNames.SAGE,
@@ -35,7 +35,7 @@ class AgentsProvider {
         ],
         origin: Countries.CHINA,
         category: AgentCategories.SENTINELS,
-        color: Colors.amber,
+        color: Color(0xFF3e1e4c),
       ),
       Agent(
         AgentNames.KILLJOY,
@@ -52,18 +52,6 @@ class AgentsProvider {
     ],
     AgentCategories.CONTROLLERS: [
       Agent(
-        AgentNames.ASTRA,
-        abilities: [
-          AbilityName.GRAVITY_WALL,
-          AbilityName.NOVA_PULSE,
-          AbilityName.NEBULA,
-          AbilityName.ASTRALFORM,
-        ],
-        origin: Countries.GHANA,
-        category: AgentCategories.CONTROLLERS,
-        color: Colors.red,
-      ),
-      Agent(
         AgentNames.BRIMSTONE,
         abilities: [
           AbilityName.STIM_BEACON,
@@ -73,7 +61,19 @@ class AgentsProvider {
         ],
         origin: Countries.USA,
         category: AgentCategories.CONTROLLERS,
-        color: Colors.red,
+        color: Color(0xFF424a58),
+      ),
+      Agent(
+        AgentNames.ASTRA,
+        abilities: [
+          AbilityName.GRAVITY_WALL,
+          AbilityName.NOVA_PULSE,
+          AbilityName.NEBULA,
+          AbilityName.ASTRALFORM,
+        ],
+        origin: Countries.GHANA,
+        category: AgentCategories.CONTROLLERS,
+        color: Color(0xFF2f0977),
       ),
       Agent(
         AgentNames.OMEN,
@@ -85,7 +85,7 @@ class AgentsProvider {
         ],
         origin: Countries.USA,
         category: AgentCategories.CONTROLLERS,
-        color: Colors.red,
+        color: Color(0xFF4b99c1),
       ),
       Agent(
         AgentNames.VIPER,
@@ -97,22 +97,10 @@ class AgentsProvider {
         ],
         origin: Countries.USA,
         category: AgentCategories.CONTROLLERS,
-        color: Colors.red,
+        color: Color(0xFF1d7b3d),
       ),
     ],
     AgentCategories.INITIATORS: [
-      Agent(
-        AgentNames.BREACH,
-        abilities: [
-          AbilityName.AFTERSHOCK,
-          AbilityName.FLASHPOINT,
-          AbilityName.FAULT_LINE,
-          AbilityName.ROLLING_THUNDER,
-        ],
-        origin: Countries.SWEDEN,
-        category: AgentCategories.INITIATORS,
-        color: Colors.blue,
-      ),
       Agent(
         AgentNames.SOVA,
         abilities: [
@@ -123,7 +111,19 @@ class AgentsProvider {
         ],
         origin: Countries.RUSSIA,
         category: AgentCategories.INITIATORS,
-        color: Colors.blue,
+        color: Color(0xFF1565c0),
+      ),
+      Agent(
+        AgentNames.BREACH,
+        abilities: [
+          AbilityName.AFTERSHOCK,
+          AbilityName.FLASHPOINT,
+          AbilityName.FAULT_LINE,
+          AbilityName.ROLLING_THUNDER,
+        ],
+        origin: Countries.SWEDEN,
+        category: AgentCategories.INITIATORS,
+        color: Color(0xFF305d47),
       ),
       Agent(
         AgentNames.SKYE,
@@ -135,7 +135,7 @@ class AgentsProvider {
         ],
         origin: Countries.AUSTRALIA,
         category: AgentCategories.INITIATORS,
-        color: Colors.blue,
+        color: Color(0xFF3d9e86),
       ),
     ],
     AgentCategories.DUELISTS: [
@@ -149,7 +149,7 @@ class AgentsProvider {
         ],
         origin: Countries.SOUTH_KOREA,
         category: AgentCategories.DUELISTS,
-        color: Color(0xFF00C853),
+        color: Color(0xFF77d4e4),
       ),
       Agent(
         AgentNames.RAZE,
@@ -161,7 +161,7 @@ class AgentsProvider {
         ],
         origin: Countries.BRAZIL,
         category: AgentCategories.DUELISTS,
-        color: Color(0xFF00C853),
+        color: Color(0xFF16363a),
       ),
       Agent(
         AgentNames.PHEONIX,
@@ -173,7 +173,7 @@ class AgentsProvider {
         ],
         origin: Countries.UK,
         category: AgentCategories.DUELISTS,
-        color: Color(0xFF00C853),
+        color: Color(0xFFc2c0c6),
       ),
       Agent(
         AgentNames.REYNA,
@@ -185,7 +185,7 @@ class AgentsProvider {
         ],
         origin: Countries.MEXICO,
         category: AgentCategories.DUELISTS,
-        color: Color(0xFF00C853),
+        color: Color(0xFF833df1),
       ),
       Agent(
         AgentNames.YORU,
@@ -197,7 +197,7 @@ class AgentsProvider {
         ],
         origin: Countries.JAPAN,
         category: AgentCategories.DUELISTS,
-        color: Color(0xFF00C853),
+        color: Color(0xFF424b99),
       ),
     ]
   };
