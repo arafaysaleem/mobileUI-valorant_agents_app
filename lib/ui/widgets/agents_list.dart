@@ -97,11 +97,14 @@ class AgentListItem extends HookWidget {
 
           //Avatar
           Positioned(
-            right: 1,
+            right: 3,
             bottom: 5,
-            child: Image.asset(
-              Assets.avatarAsset(agent.avatar),
-              height: 207,
+            child: Hero(
+              tag: agent.name,
+              child: Image.asset(
+                Assets.avatarAsset(agent.avatar),
+                height: 207,
+              ),
             ),
           )
         ],

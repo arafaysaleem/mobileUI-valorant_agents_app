@@ -40,7 +40,7 @@ class AgentDetailsScreen extends HookWidget {
             fit: BoxFit.fill,
           ),
         ),
-        padding: const EdgeInsets.fromLTRB(10, 60, 10, 0),
+        padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -60,9 +60,12 @@ class AgentDetailsScreen extends HookWidget {
 
               const SizedBox(height: 30),
 
-              Image.asset(
-                Assets.avatarAsset(agent.avatar),
-                height: 300,
+              Hero(
+                tag: agent.name,
+                child: Image.asset(
+                  Assets.avatarAsset(agent.avatar),
+                  height: 300,
+                ),
               ),
 
               const SizedBox(height: 30),
@@ -128,10 +131,12 @@ class _AbilityListItem extends HookWidget {
         const SizedBox(height: 12),
 
         //Ability Desc
-        Text(
-          ability.description,
-          textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 11),
+        Expanded(
+          child: Text(
+            ability.description,
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 11),
+          ),
         ),
 
         const SizedBox(height: 5),
