@@ -10,11 +10,15 @@ import 'helper/font_family.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+  runApp(MyApp());
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
   ));
-  SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.top]);
-  runApp(MyApp());
+  SystemChrome.setEnabledSystemUIOverlays([]);
 }
 
 class MyApp extends StatelessWidget {
@@ -55,9 +59,9 @@ class MyApp extends StatelessWidget {
         ),
         initialRoute: AgentListingsScreen.routeName,
         routes: {
-          TitleScreen.routeName: (_) => TitleScreen(),
-          AgentListingsScreen.routeName: (_) => AgentListingsScreen(),
-          AgentDetailsScreen.routeName: (_) => AgentDetailsScreen(),
+          TitleScreen.routeName: (_) => const TitleScreen(),
+          AgentListingsScreen.routeName: (_) => const AgentListingsScreen(),
+          AgentDetailsScreen.routeName: (_) => const AgentDetailsScreen(),
         },
       ),
     );

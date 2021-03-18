@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:valorant_agents_app/ui/widgets/abilities_list.dart';
 
 import '../../helper/assets.dart';
 
+import '../widgets/abilities_list.dart';
 import '../widgets/agents_list.dart';
 
 enum ListFilters { AGENTS, ABILITIES }
@@ -37,7 +37,7 @@ class _AgentListingsScreenState extends State<AgentListingsScreen> {
             fit: BoxFit.fill,
           ),
         ),
-        padding: const EdgeInsets.fromLTRB(0, 100, 0, 50),
+        padding: const EdgeInsets.fromLTRB(0, 60, 0, 0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -110,7 +110,7 @@ class FilterButton extends StatelessWidget {
       onPressed: onTap,
       child: Text(
         text,
-        style: theme.textTheme.headline4!.copyWith(fontSize: 16),
+        style: theme.textTheme.bodyText1!.copyWith(fontSize: 19, letterSpacing: 0.5),
       ),
     );
   }

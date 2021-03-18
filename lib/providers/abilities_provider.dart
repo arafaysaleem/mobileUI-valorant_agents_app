@@ -518,4 +518,10 @@ class AbilitiesProvider {
 
   UnmodifiableListView<Ability> get abilities =>
       UnmodifiableListView(_abilities.values);
+
+  List<Ability> getAgentAbilities(List<AbilityName> abilities){
+    List<Ability> abs = [];
+    abilities.forEach((abilityName) => abs.add(_abilities[abilityName]!));
+    return abs;
+  }
 }

@@ -13,5 +13,5 @@ class Ability {
 
   String get icon => _name.toString().toLowerCase().toImage();
 
-  String get name => _name.toString().capitalize();
+  String get name => _name.inString;
 }

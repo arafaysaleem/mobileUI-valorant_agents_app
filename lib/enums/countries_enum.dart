@@ -6,5 +6,5 @@ enum Countries {
 }
 
 extension CountryEx on Countries{
-  String get inString => describeEnum(this);
+  String get inString => describeEnum(this).replaceAll("_", " ");
 }

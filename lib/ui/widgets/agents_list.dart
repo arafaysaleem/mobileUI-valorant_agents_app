@@ -10,6 +10,11 @@ import '../../enums/agent_categories_enum.dart';
 
 import '../../helper/assets.dart';
 
+import '../screens/agent_details_screen.dart';
+
+final _listAgent = ScopedProvider<Agent>((_) => throw UnimplementedError());
+final _listIsLeftSide = ScopedProvider<bool>((_) => throw UnimplementedError());
+
 class AgentsList extends HookWidget {
   final AgentCategories category;
 
@@ -29,71 +34,78 @@ class AgentsList extends HookWidget {
       ),
       itemBuilder: (ctx, i) {
         final agent = agents[i];
-        return AgentListItem(agent: agent, isLeftSide: i.isEven);
+        return ProviderScope(
+          overrides: [
+            _listAgent.overrideWithValue(agent),
+            _listIsLeftSide.overrideWithValue(i.isEven),
+          ],
+          child: const AgentListItem(),
+        );
       },
     );
   }
 }
 
-class AgentListItem extends StatelessWidget {
-  const AgentListItem({
-    Key? key,
-    required this.agent, 
-    required this.isLeftSide,
-  }) : super(key: key);
-
-  final Agent agent;
-  final bool isLeftSide;
+class AgentListItem extends HookWidget {
+  const AgentListItem();
 
   @override
   Widget build(BuildContext context) {
+    final agent = useProvider(_listAgent);
+    final isLeftSide = useProvider(_listIsLeftSide);
     final theme = Theme.of(context);
-    return Stack(
-      children: [
-        //Name and category
-        Align(
-          alignment: Alignment.bottomCenter,
-          child: Container(
-            height: 150,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              color: agent.color,
-              borderRadius: BorderRadius.circular(8),
-            ),
-            margin: isLeftSide
-                ? const EdgeInsets.only(left: 10, right: 15)
-                : const EdgeInsets.only(left: 5,right: 10),
-            padding: const EdgeInsets.symmetric(
-              vertical: 25,
-              horizontal: 6,
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text(
-                  "${agent.category}",
-                  style: theme.textTheme.bodyText1!.copyWith(fontSize: 10,letterSpacing: 0.1),
-                ),
-                Text(
-                  "${agent.name}",
-                  style: theme.textTheme.headline3!.copyWith(fontSize: 18),
-                ),
-              ],
+    return InkWell(
+      onTap: () {
+        Navigator.pushNamed(context, AgentDetailsScreen.routeName, arguments: agent);
+      },
+      child: Stack(
+        children: [
+          //Name and category
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              height: 150,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: agent.color,
+                borderRadius: BorderRadius.circular(8),
+              ),
+              margin: isLeftSide
+                  ? const EdgeInsets.only(left: 10, right: 15)
+                  : const EdgeInsets.only(left: 5, right: 10),
+              padding: const EdgeInsets.symmetric(
+                vertical: 25,
+                horizontal: 6,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(
+                    "${agent.category}",
+                    style: theme.textTheme.bodyText1!
+                        .copyWith(fontSize: 11, letterSpacing: 0.4),
+                  ),
+                  Text(
+                    "${agent.name}",
+                    style: theme.textTheme.headline1!.copyWith(fontSize: 20),
+                  ),
+                ],
+              ),
             ),
           ),
-        ),
 
-        //Avatar
-        Positioned(
-          right: 1,
-          bottom: 5,
-          child: Image.asset(
-            Assets.avatarAsset(agent.avatar),
-            height: 207,
-          ),
-        )
-      ],
+          //Avatar
+          Positioned(
+            right: 1,
+            bottom: 5,
+            child: Image.asset(
+              Assets.avatarAsset(agent.avatar),
+              height: 207,
+            ),
+          )
+        ],
+      ),
     );
   }
 }

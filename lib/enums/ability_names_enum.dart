@@ -23,5 +23,5 @@ enum AbilityName {
 }
 
 extension AbilityEx on AbilityName{
-  String get inString => describeEnum(this);
+  String get inString => describeEnum(this).replaceAll("_", " ");
 }

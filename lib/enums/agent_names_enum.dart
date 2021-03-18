@@ -6,5 +6,5 @@ enum AgentNames {
 }
 
 extension AgentEx on AgentNames{
-  String get inString => describeEnum(this);
+  String get inString => describeEnum(this).replaceAll("_", " ");
 }
