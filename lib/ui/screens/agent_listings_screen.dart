@@ -28,23 +28,22 @@ class _AgentListingsScreenState extends State<AgentListingsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage(Assets.listingBg), fit: BoxFit.fill),
+            image: AssetImage(Assets.listingBg),
+            fit: BoxFit.fill,
+          ),
         ),
         padding: const EdgeInsets.fromLTRB(0, 100, 0, 50),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Text(
+            Text(
               "VALORANT AGENTS",
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 30,
-                fontWeight: FontWeight.w600
-              ),
+              style: theme.textTheme.headline1!.copyWith(fontSize: 30),
             ),
             const SizedBox(height: 20),
             Padding(
@@ -78,7 +77,9 @@ class _AgentListingsScreenState extends State<AgentListingsScreen> {
             ),
             const SizedBox(height: 10),
             Expanded(
-              child: _currentFilter == ListFilters.AGENTS ? const AgentsList() : const AbilitiesList(),
+              child: _currentFilter == ListFilters.AGENTS
+                  ? const AgentsList()
+                  : const AbilitiesList(),
             ),
           ],
         ),
@@ -99,16 +100,17 @@ class FilterButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return MaterialButton(
       elevation: 0,
       hoverElevation: 4,
       height: 40,
-      color: Theme.of(context).primaryColor,
+      color: theme.primaryColor,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(9)),
       onPressed: onTap,
       child: Text(
         text,
-        style: const TextStyle(color: Colors.white, fontSize: 16),
+        style: theme.textTheme.headline4!.copyWith(fontSize: 16),
       ),
     );
   }

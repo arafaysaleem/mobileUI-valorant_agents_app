@@ -47,6 +47,7 @@ class AgentListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Stack(
       children: [
         //Name and category
@@ -72,19 +73,11 @@ class AgentListItem extends StatelessWidget {
               children: [
                 Text(
                   "${agent.category}",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 10,
-                    letterSpacing: 0.1,
-                  ),
+                  style: theme.textTheme.bodyText1!.copyWith(fontSize: 10,letterSpacing: 0.1),
                 ),
                 Text(
                   "${agent.name}",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: theme.textTheme.headline3!.copyWith(fontSize: 18),
                 ),
               ],
             ),
