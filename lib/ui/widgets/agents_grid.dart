@@ -6,22 +6,22 @@ import '../../providers/all_providers.dart';
 
 import '../../models/agent.dart';
 
-import '../../enums/agent_categories_enum.dart';
-
 import '../../helper/assets.dart';
 
 import '../screens/agent_details_screen.dart';
+
+import 'agent_category_dropdown.dart';
 
 final _listAgent = ScopedProvider<Agent>((_) => throw UnimplementedError());
 final _listIsLeftSide = ScopedProvider<bool>((_) => throw UnimplementedError());
 
 class AgentsList extends HookWidget {
-  final AgentCategories category;
 
-  const AgentsList({this.category = AgentCategories.ALL});
+  const AgentsList();
 
   @override
   Widget build(BuildContext context) {
+    final category = useProvider(currentCategory).state;
     final agents = useProvider(agentsProvider).getAgents(category: category);
     return GridView.builder(
       physics: BouncingScrollPhysics(),

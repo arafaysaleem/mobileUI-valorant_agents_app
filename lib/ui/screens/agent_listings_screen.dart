@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../helper/assets.dart';
 
 import '../widgets/abilities_list.dart';
+import '../widgets/agent_category_dropdown.dart';
 import '../widgets/agents_grid.dart';
 
 enum ListFilters { AGENTS, ABILITIES }
@@ -37,15 +38,19 @@ class _AgentListingsScreenState extends State<AgentListingsScreen> {
             fit: BoxFit.fill,
           ),
         ),
-        padding: const EdgeInsets.fromLTRB(0, 60, 0, 0),
+        padding: const EdgeInsets.only(top: 50),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            //Heading
             Text(
               "VALORANT AGENTS",
-              style: theme.textTheme.headline1!.copyWith(fontSize: 30),
+              style: theme.textTheme.headline1!.copyWith(fontSize: 32),
             ),
+
             const SizedBox(height: 20),
+
+            //Buttons
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Row(
@@ -75,7 +80,15 @@ class _AgentListingsScreenState extends State<AgentListingsScreen> {
                 ],
               ),
             ),
+
             const SizedBox(height: 10),
+
+            //Radio Buttons
+            const AgentCategoryDropdown(),
+
+            const SizedBox(height: 10),
+
+            //List
             Expanded(
               child: _currentFilter == ListFilters.AGENTS
                   ? const AgentsList()
@@ -110,7 +123,8 @@ class FilterButton extends StatelessWidget {
       onPressed: onTap,
       child: Text(
         text,
-        style: theme.textTheme.headline4!.copyWith(fontSize: 19, letterSpacing: 0.5),
+        style: theme.textTheme.headline4!
+            .copyWith(fontSize: 19, letterSpacing: 0.5),
       ),
     );
   }
