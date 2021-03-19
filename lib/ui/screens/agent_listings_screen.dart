@@ -38,17 +38,17 @@ class _AgentListingsScreenState extends State<AgentListingsScreen> {
             fit: BoxFit.fill,
           ),
         ),
-        padding: const EdgeInsets.only(top: 50),
+        padding: const EdgeInsets.only(top: 30),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             //Heading
             Text(
               "VALORANT AGENTS",
-              style: theme.textTheme.headline1!.copyWith(fontSize: 32),
+              style: theme.textTheme.headline1!.copyWith(fontSize: 33),
             ),
 
-            const SizedBox(height: 20),
+            const SizedBox(height: 25),
 
             //Buttons
             Padding(
@@ -56,6 +56,7 @@ class _AgentListingsScreenState extends State<AgentListingsScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  //List filter 2
                   Expanded(
                     child: FilterButton(
                       text: "AGENTS",
@@ -66,7 +67,10 @@ class _AgentListingsScreenState extends State<AgentListingsScreen> {
                       },
                     ),
                   ),
+
                   const SizedBox(width: 20),
+
+                  //List filter 1
                   Expanded(
                     child: FilterButton(
                       text: "ABILITIES",
@@ -81,12 +85,19 @@ class _AgentListingsScreenState extends State<AgentListingsScreen> {
               ),
             ),
 
-            const SizedBox(height: 10),
+            const SizedBox(height: 20),
 
             //Radio Buttons
             const AgentCategoryDropdown(),
 
-            const SizedBox(height: 10),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 28),
+              child: Divider(
+                color: theme.primaryColor,
+                thickness: 2,
+                height: 0,
+              ),
+            ),
 
             //List
             Expanded(

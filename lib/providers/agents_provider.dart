@@ -1,5 +1,6 @@
 import 'dart:collection';
 
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 
 import '../enums/ability_names_enum.dart';
@@ -7,6 +8,10 @@ import '../enums/agent_names_enum.dart';
 import '../enums/agent_categories_enum.dart';
 import '../enums/countries_enum.dart';
 import '../models/agent.dart';
+
+final agentsProvider = Provider<AgentsProvider>((ref) {
+  return AgentsProvider();
+});
 
 class AgentsProvider {
   const AgentsProvider();

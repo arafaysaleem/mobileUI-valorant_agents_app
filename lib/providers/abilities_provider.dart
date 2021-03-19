@@ -1,8 +1,14 @@
 import 'dart:collection';
 
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import '../models/ability.dart';
 
 import '../enums/ability_names_enum.dart';
+
+final abilitiesProvider = Provider<AbilitiesProvider>((ref) {
+  return AbilitiesProvider();
+});
 
 class AbilitiesProvider {
   const AbilitiesProvider();

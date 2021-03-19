@@ -4,7 +4,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'ui/screens/agent_details_screen.dart';
 import 'ui/screens/agent_listings_screen.dart';
-import 'ui/screens/title_screen.dart';
 
 import 'helper/font_family.dart';
 
@@ -59,7 +58,6 @@ class MyApp extends StatelessWidget {
         ),
         initialRoute: AgentListingsScreen.routeName,
         routes: {
-          TitleScreen.routeName: (_) => const TitleScreen(),
           AgentListingsScreen.routeName: (_) => const AgentListingsScreen(),
           AgentDetailsScreen.routeName: (_) => const AgentDetailsScreen(),
         },
