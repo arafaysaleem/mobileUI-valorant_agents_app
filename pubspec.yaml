@@ -12,7 +12,7 @@ dependencies:
   flutter_riverpod: ^0.13.1
   hooks_riverpod: ^0.13.1
   flutter_hooks: ^0.16.0
-  flutter_svg: ^0.19.3
+  flutter_native_splash: ^1.1.4+1
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -26,16 +26,16 @@ flutter:
   fonts:
   - family: RobotoCondensed
     fonts:
-      - asset: fonts/RobotoCondensed-Light.ttf
-        weight: 300
-      - asset: fonts/RobotoCondensed-Regular.ttf
-        weight: 400
-      - asset: fonts/RobotoCondensed-Bold.ttf
-        weight: 700
+    - asset: fonts/RobotoCondensed-Light.ttf
+      weight: 300
+    - asset: fonts/RobotoCondensed-Regular.ttf
+      weight: 400
+    - asset: fonts/RobotoCondensed-Bold.ttf
+      weight: 700
   - family: Tungsten
     fonts:
-      - asset: fonts/Tungsten-Medium.ttf
-        weight: 500
+    - asset: fonts/Tungsten-Medium.ttf
+      weight: 500
   - family: Valorant
     fonts:
     - asset: fonts/Valorant.ttf

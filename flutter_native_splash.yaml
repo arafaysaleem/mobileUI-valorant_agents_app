@@ -1,0 +1,16 @@
+flutter_native_splash:
+  # To restore Flutter's default white splash screen, run the following command in the terminal:
+  # flutter pub run flutter_native_splash:remove
+
+  background_image: "assets/backgrounds/cover1.png"
+
+  #android: false
+  ios: false
+  #web: false
+
+  #android_gravity: center
+
+  # web_image_mode can be one of the following modes: center, contain, stretch, and cover.
+  #web_image_mode: center
+
+  fullscreen: true
