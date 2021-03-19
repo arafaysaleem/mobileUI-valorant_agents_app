@@ -36,24 +36,24 @@ class MyApp extends StatelessWidget {
               color: Colors.white
             ),
             headline2: TextStyle(
-              fontFamily: FontFamily.tungsten,
-              fontWeight: FontWeight.w900,
-              color: Colors.white
-            ),
-            headline3: TextStyle(
-              fontFamily: FontFamily.tungsten,
+              fontFamily: FontFamily.robotoCondensed,
               fontWeight: FontWeight.w700,
               color: Colors.white
             ),
             headline4: TextStyle(
               fontFamily: FontFamily.tungsten,
-              fontWeight: FontWeight.w600,
+              fontWeight: FontWeight.w500,
               color: Colors.white
             ),
             bodyText1: TextStyle(
-              fontFamily: FontFamily.tungsten,
-              fontWeight: FontWeight.w500,
+              fontFamily: FontFamily.robotoCondensed,
+              fontWeight: FontWeight.w300,
               color: Colors.white
+            ),
+            bodyText2: TextStyle(
+                fontFamily: FontFamily.robotoCondensed,
+                fontWeight: FontWeight.w400,
+                color: Colors.white
             ),
           )
         ),

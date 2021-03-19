@@ -11,7 +11,7 @@ class Ability {
     required this.description,
   }) : this._name = name;
 
-  String get icon => _name.toString().toLowerCase().toImage();
+  String get icon => _name.inString.toLowerCase().toPng();
 
   String get name => _name.inString;
 }

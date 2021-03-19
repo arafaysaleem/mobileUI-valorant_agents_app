@@ -28,5 +28,5 @@ class Agent {
 
   String get category => _category.inString;
 
-  String get avatar => name.toLowerCase().toImage();
+  String get avatar => name.toLowerCase().toPng();
 }

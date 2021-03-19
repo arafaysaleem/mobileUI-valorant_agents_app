@@ -1,10 +1,10 @@
 import 'package:flutter/foundation.dart';
 
 enum AbilityName {
-  AFTERSHOCK, ALARMBOT, ASTRALFORM,
+  AFTERSHOCK, ALARMBOT, ASTRAL_FORM,
   BARRIER_ORB, BLADE_STORM, BLAST_PACK, BLAZE, BLINDSIDE, BOOM_BOT,
   CLOUDBURST, COSMIC_DIVIDE, CURVEBALL, CYBER_CAGE,
-  DARK_COVER, DEVOUR, DIMENSION_DRIFT, DISMISS,
+  DARK_COVER, DEVOUR, DIMENSIONAL_DRIFT, DISMISS,
   EMPRESS,
   FAKEOUT, FAULT_LINE, FLASHPOINT, FROM_THE_SHADOWS,
   GATECRASH, GRAVITY_WALL, GUIDING_LIGHT,
@@ -23,5 +23,5 @@ enum AbilityName {
 }
 
 extension AbilityEx on AbilityName{
-  String get inString => describeEnum(this).replaceAll("_", " ");
+  String get inString => describeEnum(this);
 }

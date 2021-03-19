@@ -4,5 +4,5 @@ extension StringExt on String {
     return "${n[0].toUpperCase()}${n.substring(1)}";
   }
 
-  String toImage() => "$this.png";
+  String toPng() => "$this.png";
 }

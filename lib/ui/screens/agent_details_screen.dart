@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -29,9 +28,6 @@ class AgentDetailsScreen extends HookWidget {
         iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
         backgroundColor: Colors.transparent,
         elevation: 0,
-        systemOverlayStyle: SystemUiOverlayStyle(
-          statusBarColor: Colors.transparent,
-        ),
       ),
       body: Container(
         decoration: BoxDecoration(
@@ -48,18 +44,21 @@ class AgentDetailsScreen extends HookWidget {
               //Heading
               Text(
                 "BIOGRAPHY",
-                style: TextStyle(fontSize: 20),
+                style: theme.textTheme.headline2!.copyWith(fontSize: 20),
               ),
+
+              const SizedBox(height: 20),
 
               //Agent name
               Text(
                 "${agent.name}",
-                style: theme.textTheme.bodyText1!
+                style: theme.textTheme.headline1!
                     .copyWith(fontSize: 40, letterSpacing: 1),
               ),
 
-              const SizedBox(height: 30),
+              const SizedBox(height: 25),
 
+              //Agent avatar
               Hero(
                 tag: agent.name,
                 child: Image.asset(
@@ -78,15 +77,15 @@ class AgentDetailsScreen extends HookWidget {
                 padding: const EdgeInsets.all(0),
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-                  mainAxisSpacing: 20,
+                  mainAxisSpacing: 0,
                   crossAxisSpacing: 20,
-                  childAspectRatio: 0.65,
+                  childAspectRatio: 0.5,
                 ),
                 itemBuilder: (ctx, i) => ProviderScope(
                   overrides: [
                     _listAbility.overrideWithValue(abilities[i]),
                   ],
-                  child: const _AbilityListItem(),
+                  child: const _AbilityGridItem(),
                 ),
               )
             ],
@@ -97,8 +96,8 @@ class AgentDetailsScreen extends HookWidget {
   }
 }
 
-class _AbilityListItem extends HookWidget {
-  const _AbilityListItem();
+class _AbilityGridItem extends HookWidget {
+  const _AbilityGridItem();
 
   @override
   Widget build(BuildContext context) {
@@ -109,23 +108,25 @@ class _AbilityListItem extends HookWidget {
         //Icon
         Container(
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(6),
-              border: Border.all(color: theme.primaryColor),
+            borderRadius: BorderRadius.circular(6),
+            border: Border.all(color: theme.primaryColor),
           ),
           height: 60,
           width: 60,
-          // child: Image.asset(
-          //   Assets.avatarAsset(ability.icon),
-          //   height: 50,
-          // ),
+          padding: const EdgeInsets.all(7),
+          child: Image.asset(
+            Assets.abilityIcon(ability.icon),
+            color: theme.primaryColor,
+            fit: BoxFit.contain,
+          ),
         ),
 
         const SizedBox(height: 10),
 
         //Ability Name
         Text(
-          ability.name,
-          style: TextStyle(fontSize: 13),
+          ability.name.replaceAll("_", " "),
+          style: theme.textTheme.bodyText2!.copyWith(fontSize: 13),
         ),
 
         const SizedBox(height: 12),
@@ -135,7 +136,10 @@ class _AbilityListItem extends HookWidget {
           child: Text(
             ability.description,
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 11),
+            style: theme.textTheme.bodyText2!.copyWith(
+              fontSize: 11.5,
+              height: 1.5,
+            ),
           ),
         ),
 

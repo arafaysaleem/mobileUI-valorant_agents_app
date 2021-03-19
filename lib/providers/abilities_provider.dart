@@ -26,8 +26,8 @@ class AbilitiesProvider {
         Re-entering the 40m range reactivates it.
       """,
     ),
-    AbilityName.ASTRALFORM: Ability(
-      name: AbilityName.ASTRALFORM,
+    AbilityName.ASTRAL_FORM: Ability(
+      name: AbilityName.ASTRAL_FORM,
       description: """
         ACTIVATE (X) to enter Astral Form and PRIMARY FIRE to place Stars. 
         Target Stars with your Nova Pulse, Nebula, or Gravity Well to use
@@ -134,8 +134,8 @@ class AbilitiesProvider {
         will automatically cast and not consume the Soul Orb.
       """,
     ),
-    AbilityName.DIMENSION_DRIFT: Ability(
-      name: AbilityName.DIMENSION_DRIFT,
+    AbilityName.DIMENSIONAL_DRIFT: Ability(
+      name: AbilityName.DIMENSIONAL_DRIFT,
       description: """
         Press the bound ability key to open a rift to another 
         dimension containing Yoru's Mask. Pressing 'Fire' 

@@ -39,15 +39,15 @@ class AgentsList extends HookWidget {
             _listAgent.overrideWithValue(agent),
             _listIsLeftSide.overrideWithValue(i.isEven),
           ],
-          child: const AgentListItem(),
+          child: const AgentGridItem(),
         );
       },
     );
   }
 }
 
-class AgentListItem extends HookWidget {
-  const AgentListItem();
+class AgentGridItem extends HookWidget {
+  const AgentGridItem();
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +56,11 @@ class AgentListItem extends HookWidget {
     final theme = Theme.of(context);
     return InkWell(
       onTap: () {
-        Navigator.pushNamed(context, AgentDetailsScreen.routeName, arguments: agent);
+        Navigator.pushNamed(
+          context,
+          AgentDetailsScreen.routeName,
+          arguments: agent,
+        );
       },
       child: Stack(
         children: [
@@ -83,9 +87,10 @@ class AgentListItem extends HookWidget {
                 children: [
                   Text(
                     "${agent.category}",
-                    style: theme.textTheme.bodyText1!
-                        .copyWith(fontSize: 11, letterSpacing: 0.4),
+                    style: theme.textTheme.headline4!
+                        .copyWith(fontSize: 12, letterSpacing: 0.7),
                   ),
+                  const SizedBox(height: 5),
                   Text(
                     "${agent.name}",
                     style: theme.textTheme.headline1!.copyWith(fontSize: 20),

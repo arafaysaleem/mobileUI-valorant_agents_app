@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../helper/assets.dart';
 
 import '../widgets/abilities_list.dart';
-import '../widgets/agents_list.dart';
+import '../widgets/agents_grid.dart';
 
 enum ListFilters { AGENTS, ABILITIES }
 
@@ -110,7 +110,7 @@ class FilterButton extends StatelessWidget {
       onPressed: onTap,
       child: Text(
         text,
-        style: theme.textTheme.bodyText1!.copyWith(fontSize: 19, letterSpacing: 0.5),
+        style: theme.textTheme.headline4!.copyWith(fontSize: 19, letterSpacing: 0.5),
       ),
     );
   }
