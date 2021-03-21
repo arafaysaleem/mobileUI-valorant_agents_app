@@ -17,8 +17,8 @@
 </kbd></div>
 <br></br>
 <div align="center">
-<img src="Readme_files/1.png" width="260" height="538"/>&nbsp;<img src="Readme_files/2.png" width="260" height="538"/>&nbsp;&nbsp;<img src="Readme_files/3.png" width="260" height="538"/><br></br>
-<img src="Readme_files/4.png" width="260" height="538"/><img src="Readme_files/5.png" width="260" height="538"/>&nbsp;&nbsp;<img src="Readme_files/6.png" width="260" height="538"/><br></br>
+<img src="Readme_files/valo1.png" width="260" height="538"/>&nbsp;<img src="Readme_files/valo2.png" width="260" height="538"/>&nbsp;&nbsp;<img src="Readme_files/valo3.png" width="260" height="538"/><br></br>
+<img src="Readme_files/valo4.png" width="260" height="538"/><img src="Readme_files/valo5.png" width="260" height="538"/>&nbsp;&nbsp;<img src="Readme_files/valo6.png" width="260" height="538"/><br></br>
 </div>
 
 *Feel free to fork.* ❤︎
